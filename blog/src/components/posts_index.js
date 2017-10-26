@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchPost} from '../actions';
+import {fetchPosts} from '../actions';
 import {Link} from 'react-router-dom';
 import _ from 'lodash';
 
 class PostsIndex extends Component {
 componentDidMount() {
-  this.props.fetchPost();
+  this.props.fetchPosts();
 }
 
 renderPosts(){
@@ -37,7 +37,7 @@ renderPosts(){
 }
 
 function mapDispatchToProps(dispatch){
-return bindActionCreators({ fetchPost }, dispatch)
+return bindActionCreators({ fetchPosts }, dispatch)
 }
 
 function mapStateToProps(state){
